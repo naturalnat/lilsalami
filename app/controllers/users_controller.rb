@@ -9,7 +9,7 @@ class UsersController < ApplicationController
       if Helpers.is_logged_in?(session)
         redirect to '/allcats'
       elsif params[:username] == '' || params[:password] == '' || params[:email] == ''
-        # flash[:error] = 'Username, email and password fields must be filled'
+         flash[:error] = 'Username, email and password fields must be filled'
         redirect to '/signup'
       # elsif User.find_by(username: params[:username])
       #   flash[:error] = 'Username taken, please choose another'
@@ -18,12 +18,12 @@ class UsersController < ApplicationController
       else
         @user = User.create(username: params[:username], password: params[:password], email: params[:email])
         session[:user_id] = @user.id
-        redirect '/'
+        redirect to '/'
       end
     end
 
     get '/login' do
-      redirect to '/menu' if Helpers.is_logged_in?(session)
+      redirect to '/allcats' if Helpers.is_logged_in?(session)
       erb :'/users/login'
     end
 
@@ -38,23 +38,24 @@ class UsersController < ApplicationController
       end
     end
 
-    post '/logout' do
-      if Helpers.is_logged_in?(session)
-        session.destroy
-        redirect to '/login'
-      else
-        redirect to '/'
-      end
-    end
+    get '/logout' do
+     if Helpers.is_logged_in?(session)
+        session.clear
+      redirect to '/'
+       else
+         redirect to '/allcats'
+       end
+     end
 
-    get '/allcats' do
-      if Helpers.is_logged_in?(session)
-        @user = Helpers.current_user(session)
-        @cats = Cat.all
-        erb :'cats/all'
-      else
-        # flash[:error] = 'Must be logged in to go to menu'
-        redirect to '/login'
-      end
-    end
-  end
+    # get '/allcats' do
+    #   # if Helpers.is_logged_in?(session)
+    #     # @user = Helpers.current_user(session)
+    #     # @cats = Cat.all
+    #     erb :'/cats/all'
+    #   # else
+    #     # flash[:error] = 'Must be logged in to go to menu'
+    #     # redirect to '/login'
+    #   end
+
+
+end

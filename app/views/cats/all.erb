@@ -1,6 +1,4 @@
-<p> Here are your cats, <%= @user.username %>
-<% @user.cats.each do |cat| %>
-  <ul>
-    <li><a href="/allcats/<%=cat.name%>"></a></li>
-  </ul>
+<p> Here are your cats, </p>
+<% @cats.each do |cat| %>
+   <%= cat.name %>
 <% end %>

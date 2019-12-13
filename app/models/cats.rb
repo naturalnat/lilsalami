@@ -1,5 +1,5 @@
 class Cat < ActiveRecord::Base
-  # has_secure_password
+  #1-1 association with user
   belongs_to :user
 
   def self.valid_params?(params)
