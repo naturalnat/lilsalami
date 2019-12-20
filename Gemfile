@@ -3,6 +3,7 @@ source 'http://rubygems.org'
 gem 'activerecord', require: 'active_record'
 gem 'apartment', '~> 2.2', '>= 2.2.1'
 gem 'bcrypt'
+gem "rack", ">= 2.0.8"
 gem 'pry'
 gem 'rack-flash3'
 gem 'rake'
