@@ -68,7 +68,13 @@ class CatController < ApplicationController
     erb :'cats/catname'
   end
 
-  get '/thankyoubrother' do
+  get '/thankyoubrother/:name' do
+    @cat = Cat.find_by_name(params[:name])
+    if @cat.counter < 10
+      @cat.counter = @cat.counter + 1
+      @cat.save
+      @cat
+    end
     erb :'cats/thankyou'
   end
 end

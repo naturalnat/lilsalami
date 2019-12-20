@@ -1,12 +1,18 @@
 <center>
+  <br> <h2><%=@cat.name %> has been fed <%= @cat.counter %> times.<br> remember...cats can only have a lil salami! as a treat! :~)</h2>
+<br>
+  <img src="/images/salamisad.jpg">
+  <% if @cat.counter < 10 %>
   <h1>Thamk you bröther!
     <br>
     May I hav mor salämi?
   </h1>
-  <img src="/images/salamisad.jpg">
+  <% else %>
+  <h1> I can only have 10 salamis. They're a treat :~)
+    <br> I'm full.
+  </h1>
+  <% end %>
 
-  <br>remember...cats can only have a lil salami! as a treat! :~)
-  <br>
   <a href="/allcats" class="buttons">Feed another cat</a>
   <br>
   <a href="/logout" class="buttons">Logout</a>
