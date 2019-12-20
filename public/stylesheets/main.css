@@ -1,0 +1,112 @@
+* {
+    font-family: 'Helvetica', sans-serif;
+}
+
+body {
+    margin: 0 auto;
+    background-image: url("https://abcqualitymeats.co.uk/wp-content/uploads/2017/08/sliced_salami-6611_1024x1024-1.jpg");
+    background-repeat: fixed;
+}
+
+
+/* box with all of the displayed data */
+.wrapper {
+   margin: 0 auto;
+   background-color: #B4DDD6;
+   padding: 40px;
+   margin: 40px;
+   color: #62968D;
+ }
+
+/* "User's Cats" */
+ .allcats h1 {
+      margin: 0 auto;
+      color: #62968D;
+   }
+
+
+/* Header box on top of pages */
+ .header {
+   padding: 15px;
+   margin: 0 auto;
+   background-color: ##62968D;
+   height: 60px;
+   background-image: url("/images/salamitreatmeme.jpg");
+ }
+
+
+/* Flash error color */
+ .error {
+   color:red;
+ }
+
+ .header .title{
+   float:left
+;
+ }
+
+/* Header text  */
+ .header h1, h3 {
+    margin: 0 auto;
+     margin-left: 30px;
+     color: #62968D;
+ }
+
+/* Header "Cats" */
+ .header a {
+     color: ##62968D;
+ }
+
+/* Input style in login, signup, add, edit, delete pages */
+ input {
+border-style: solid;
+color: #2e3d34;
+border-color: #62968D;
+background-color: ##62968D;
+border-width: 1px;
+border-radius: 7px;
+padding: 7px;
+font-size: 19px;
+text-shadow: 0px 0px 0px rgba(42,42,42,.75);
+}
+
+
+/* Button style */
+.buttons {
+	-moz-box-shadow:inset 0px 1px 0px 0px #a6827e;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #a6827e;
+	box-shadow:inset 0px 1px 0px 0px #a6827e;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #7d5d3b), color-stop(1, #634b30));
+	background:-moz-linear-gradient(top, #7d5d3b 5%, #634b30 100%);
+	background:-webkit-linear-gradient(top, #7d5d3b 5%, #634b30 100%);
+	background:-o-linear-gradient(top, #7d5d3b 5%, #634b30 100%);
+	background:-ms-linear-gradient(top, #7d5d3b 5%, #634b30 100%);
+	background:linear-gradient(to bottom, #7d5d3b 5%, #634b30 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#7d5d3b', endColorstr='#634b30',GradientType=0);
+	background-color:#7d5d3b;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	border:1px solid #54381e;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-size:16px;
+	padding:6px 18px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #4d3534;
+}
+.buttons:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #634b30), a-stop(1, #7d5d3b));
+	background:-moz-linear-gradient(top, #634b30 5%, #7d5d3b 100%);
+	background:-webkit-linear-gradient(top, #634b30 5%, #7d5d3b 100%);
+	background:-o-linear-gradient(top, #634b30 5%, #7d5d3b 100%);
+	background:-ms-linear-gradient(top, #634b30 5%, #7d5d3b 100%);
+	background:linear-gradient(to bottom, #634b30 5%, #7d5d3b 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#634b30', endColorstr='#7d5d3b',GradientType=0);
+	background-color:#634b30;
+}
+.buttons:active {
+	position:relative;
+	top:1px;
+}

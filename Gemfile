@@ -13,6 +13,7 @@ gem 'sinatra-activerecord', require: 'sinatra/activerecord'
 gem 'sqlite3'
 gem 'thin'
 gem 'tux'
+gem 'sinatra-flash'
 
 group :test do
   gem 'capybara'

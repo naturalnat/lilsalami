@@ -10,14 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_08_170731) do
+ActiveRecord::Schema.define(version: 2019_12_14_194921) do
 
   create_table "cats", force: :cascade do |t|
     t.string "name"
+    t.string "user_id"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
+    t.string "firstname"
+    t.string "lastname"
     t.string "username"
     t.string "email"
     t.string "password_digest"

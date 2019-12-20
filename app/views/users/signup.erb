@@ -1,36 +1,27 @@
-<!-- <h2>Users</h2>
+<body style="background-color:powderblue;">
 
+  <div>
+    <form action="/signup" method="post" class="login">
 
-<h3>Sign Up</h3>
-<form action="/signup" method="POST">
-  <p>Name: <input type="text" name="name"></p>
-  <p>Username: <input type="text" name="username"></p>
-  <p>Password: <input type="text" name="password"></p>
-  <input class="btn btn-primary" type="submit">
-</form> -->
+      <label for="firstname">First Name:</label>
+      <input type="text" name="firstname" id="firstname" placeholder="First Name">
+      <br>
+      <label for="lastname">Last Name:</label>
+      <input type="text" name="lastname" id="lastname" placeholder="Last Name">
+      <br>
+      <label for="username">Username:</label>
+      <input type="text" name="username" id="username" placeholder="Username">
+      <br>
+      <label for="email">Email:</label>
+      <input type="text" name="email" id="email" placeholder="E-mail">
+      <br>
+      <label for="password">Password:</label>
+      <input type="password" name="password" id="password" placeholder="Password">
+      <br>
+      <br>
 
-<div>
-  <form action="/signup" method="post" class="login">
-
-    <label for="firstname">First Name:</label>
-    <input type="text" name="firstname" id="firstname" placeholder="first name">
+      <input type="submit" value="signup" class="buttons">
+    </form>
     <br>
-    <label for="lastname">Last Name:</label>
-    <input type="text" name="lastname" id="lastname" placeholder="last name">
-    <br>
-    <label for="username">Username:</label>
-    <input type="text" name="username" id="username" placeholder="Username">
-    <br>
-  <label for="email">Email:</label>
-  <input type="text" name="email" id="email" placeholder="Email">
-<br>
-<label for="password">Password:< /label>
-<input type="password" name="password" id="password" placeholder="Password">
-<br>
-<br>
-
-<input type="submit" value="login" class="buttons">
-<a href='/login' class="buttons">Log In</a>
-</form>
-<br>
-</div>
+  </div>
+</body>
