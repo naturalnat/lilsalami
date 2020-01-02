@@ -1,4 +1,5 @@
 class CatController < ApplicationController
+
   get '/create' do
     erb :'cats/create'
   end
@@ -12,69 +13,69 @@ class CatController < ApplicationController
       redirect to '/create'
     else
 
-      @cats = Cat.create(params)
-      @cats.user_id = session['user_id']
-      @cats.save
+      user.cats.create(params)
 
       flash[:message] = 'Successfully created cat!'
-      redirect to "/allcats/#{params[:name]}"
+    #  redirect to "/cats/#{params[:id]}"
+    redirect to "/cats"
    end
   end
 
-  get '/allcats/:name' do
-    @catname = params[:name]
-
-    erb :'cats/catname'
-  end
-
-  get '/allcats/:name/edit' do
-    @cat = Cat.find_by_name(params[:name])
-    @cat
-    erb :'/cats/edit'
-  end
-
-  get '/allcats' do
+  get '/cats' do
     @user_id = Helpers.current_user(session).id
     @cats = Cat.all
     erb :'cats/all'
   end
 
-  patch '/allcats/:name' do
-    @cat = Cat.find_by_name(params[:name])
+  get '/cats/:id' do
+    @cat = Cat.find(params[:id])
 
+    erb :'cats/catname'
+  end
+
+  get '/cats/:id/edit' do
+    @cat = Cat.find(params[:id])
+    @cat
+    erb :'/cats/edit'
+  end
+
+
+  patch '/cats/:id' do
+    @cat = Cat.find(params[:id])
     if @cat.user_id.to_i == Helpers.current_user(session).id
-
       @cat.update(params[:cat])
       @cat.save
       flash[:message] = 'Successfully changed name!'
-      redirect to '/allcats'
+      redirect to '/cats'
     else
       redirect to '/'
     end
   end
 
-  delete '/allcats/:name/delete' do
+#probably can fix this
+  delete '/cats/:id/delete' do
     if !Helpers.is_logged_in?(session)
       redirect to '/login'
-    elsif @cat = Cat.find_by_name(params[:name])
+    elsif @cat = Cat.find(params[:id])
       @cat.delete if @cat.user == Helpers.current_user(session)
       flash[:message] = 'Cat deleted :('
-      redirect to '/allcats'
+      redirect to '/cats'
       end
   end
 
-  get '/allcats/:name' do
-    @catname = params[:name]
+  get '/cats/:id' do
+    @cat = params[:id]
     erb :'cats/catname'
   end
 
-  get '/thankyoubrother/:name' do
-    @cat = Cat.find_by_name(params[:name])
+#can prolly fix this too ??
+
+  get '/cats/:id/feed' do
+    @cat = Cat.find(params[:id])
+
     if @cat.counter < 10
-      @cat.counter = @cat.counter + 1
-      @cat.save
-      @cat
+      @cat.update_attributes(counter: @cat.counter + 1)
     end
-    erb :'cats/thankyou'
+    erb :'cats/feed'
   end
 end

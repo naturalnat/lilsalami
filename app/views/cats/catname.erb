@@ -1,20 +1,21 @@
-<h1><%= @catname %>
+<h1><%= @cat.name %>
   is your cat!</h1>
 <br>
 <center>
   <img src="https://i.kym-cdn.com/photos/images/newsfeed/001/642/647/d28" width="400" height="400">
   <br>
-  <a href="/thankyoubrother/<%= @catname %>" class="buttons">GIV LIL TREAT</a>
+  <a href="/cats/<%= @cat.id %>/feed" class="buttons">GIV LIL TREAT</a>
 </center>
 
 <br>
-<a href="/allcats/<%= @catname %>/edit" class="buttons">
+
+<a href="/cats/<%= @cat.id %>/edit" class="buttons">
   Edit</a>
 <br>
-<form action="/allcats/<%= @catname %>/delete" method="post">
+<form action="/cats/<%= @cat.id %>/delete" method="post">
   <input id="hidden" type="hidden" name="_method" value="delete">
   <input type="submit" value="Delet :'(" class="buttons">
 </form>
-<a href="/allcats" class="buttons">All Cats</a>
+<a href="/cats" class="buttons">All Cats</a>
 <br>
 <a href="/logout" class="buttons">Logout</a>

@@ -9,7 +9,7 @@
 
   <% @cats.each do |cat| %>
     <% if cat.user_id.to_i == @user_id %>
-      <a href="/allcats/<%= cat.name %>">
+      <a href="/cats/<%= cat.id %>">
       <%= cat.name %>
       </a>
       <br>

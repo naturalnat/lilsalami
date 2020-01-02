@@ -1,6 +1,3 @@
-# frozen_string_literal: true
-
-require './config/environment'
 require 'rack-flash'
 
 class ApplicationController < Sinatra::Base
@@ -14,7 +11,7 @@ class ApplicationController < Sinatra::Base
 
   get '/' do
     if Helpers.is_logged_in?(session)
-      redirect to '/allcats'
+      redirect to '/cats'
     else
       erb :index
     end

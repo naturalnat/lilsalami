@@ -3,12 +3,11 @@
 <h2>Edits for
   <%= @cat.name %></h2>
 
-<form action="/allcats/<%= @cat.name %>" method="POST">
+<form action="/cats/<%= @cat.id %>" method="POST">
   <input id="hidden" type="hidden" name="_method" value="patch">
   <label>Edit the Cat's Name:</label>
   <br>
-  <input type="text" name="cat[name]" id="catname" value="<%= @cat.name %>">
-
+  <input type="text" name="cat[name]" id="name" value="<%= @cat.name %>">
   <br>
 
   <input type="submit" value="Update Name">
