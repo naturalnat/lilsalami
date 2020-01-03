@@ -1,15 +1,11 @@
 class UsersController < ApplicationController
+
   get '/signup' do
     redirect to '/cats' if Helpers.is_logged_in?(session)
     erb :'/users/signup'
   end
 
   post '/signup' do
-    if params[:firstname] == '' || params[:lastname] == ''|| params[:username] == '' || params[:password] == '' || params[:email] == ''
-      flash[:error] = 'All fields must be filled'
-      redirect to '/signup'
-    end
-
       @user = User.new(firstname: params[:firstname], lastname: params[:lastname], username: params[:username], password: params[:password], email: params[:email])
       if @user.save
         session[:user_id] = @user.id
@@ -18,18 +14,6 @@ class UsersController < ApplicationController
       flash[:error] = @user.errors.full_messages.join(" ")
       redirect to '/signup'
       end
-
-
-    # elsif User.find_by(email: params[:email])
-    #   flash[:error] = 'E-mail already in use. Please choose another'
-    # elsif User.find_by(username: params[:username])
-    #   flash[:error] = 'Username already in use. Please choose another'
-    #   redirect to '/signup'
-    # else
-    #   @user = User.create(firstname: params[:firstname], lastname: params[:lastname], username: params[:username], password: params[:password], email: params[:email])
-    #   session[:user_id] = @user.id
-    #   redirect to '/create'
-    # end
   end
 
   get '/login' do

@@ -6,18 +6,16 @@ class CatController < ApplicationController
 
   post '/create' do
     user = Helpers.current_user(session)
+
     if user.nil?
       redirect to '/'
     elsif params[:name].empty?
       flash[:error] = 'Please name your cat'
       redirect to '/create'
     else
-
-      user.cats.create(params)
-
-      flash[:message] = 'Successfully created cat!'
-    #  redirect to "/cats/#{params[:id]}"
-    redirect to "/cats"
+      @cat = user.cats.create(params)
+      flash[:message] = "Successfully created #{@cat.name}!"
+      redirect to "/cats/#{@cat.id}"
    end
   end
 
@@ -29,7 +27,6 @@ class CatController < ApplicationController
 
   get '/cats/:id' do
     @cat = Cat.find(params[:id])
-
     erb :'cats/catname'
   end
 
@@ -38,7 +35,6 @@ class CatController < ApplicationController
     @cat
     erb :'/cats/edit'
   end
-
 
   patch '/cats/:id' do
     @cat = Cat.find(params[:id])
@@ -52,7 +48,7 @@ class CatController < ApplicationController
     end
   end
 
-#probably can fix this
+
   delete '/cats/:id/delete' do
     if !Helpers.is_logged_in?(session)
       redirect to '/login'
@@ -60,15 +56,15 @@ class CatController < ApplicationController
       @cat.delete if @cat.user == Helpers.current_user(session)
       flash[:message] = 'Cat deleted :('
       redirect to '/cats'
-      end
+    end
   end
+
 
   get '/cats/:id' do
     @cat = params[:id]
     erb :'cats/catname'
   end
 
-#can prolly fix this too ??
 
   get '/cats/:id/feed' do
     @cat = Cat.find(params[:id])
@@ -78,4 +74,6 @@ class CatController < ApplicationController
     end
     erb :'cats/feed'
   end
+
+
 end
