@@ -9,8 +9,18 @@ class ApplicationController < Sinatra::Base
     use Rack::Flash
   end
 
+  helpers do
+    def current_user(session)
+      User.find(session[:user_id])
+    end
+
+    def is_logged_in?(session)
+      session.include?(:user_id)
+    end
+  end
+
   get '/' do
-    if Helpers.is_logged_in?(session)
+    if is_logged_in?(session)
       redirect to '/cats'
     else
       erb :index

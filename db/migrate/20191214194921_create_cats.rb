@@ -4,6 +4,8 @@ class CreateCats < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :user_id
       t.integer :counter, default: 0
+      t.string :image
+      t.timestamp :last_update
     end
   end
 end

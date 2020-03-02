@@ -16,6 +16,8 @@ ActiveRecord::Schema.define(version: 2019_12_14_194921) do
     t.string "name"
     t.string "user_id"
     t.integer "counter", default: 0
+    t.string "image"
+    t.datetime "last_update"
   end
 
   create_table "users", force: :cascade do |t|

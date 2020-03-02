@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   get '/signup' do
-    redirect to '/cats' if Helpers.is_logged_in?(session)
+    redirect to '/cats' if is_logged_in?(session)
     erb :'/users/signup'
   end
 
@@ -17,7 +17,7 @@ class UsersController < ApplicationController
   end
 
   get '/login' do
-    redirect to '/cats' if Helpers.is_logged_in?(session)
+    redirect to '/cats' if is_logged_in?(session)
     erb :'/users/login'
   end
 

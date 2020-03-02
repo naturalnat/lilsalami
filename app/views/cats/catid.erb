@@ -1,9 +1,10 @@
 <center>
 <h1><%= @cat.name.upcase %></h1>
 <br>
-  <img src="https://i.kym-cdn.com/photos/images/newsfeed/001/642/647/d28" width="400" height="400">
+  <img src="<%= @cat.image %>" width="400" height="400">
   <br>
   <a href="/cats/<%= @cat.id %>/feed" class="buttons">GIV <%= @cat.name.upcase %> A LIL TREAT</a>
+<br>
 </center>
 
 <br>
