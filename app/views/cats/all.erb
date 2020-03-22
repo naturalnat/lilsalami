@@ -1,23 +1,23 @@
-<center>
   <h1>
     Welcome,
     <%= current_user(session).username %></h1>
   <p>
     <h2>These cats want a lil treat!</h2>
-  </center>
   <br>
 
   <% @cats.each do |cat| %>
     <% if cat.user_id.to_i == @user_id %>
       <a href="/cats/<%= cat.id %>">
-      <%= cat.name %>
+      <img src ="<%= cat.image %>" id="caticons">
       </a>
+
       <br>
 
     <% end %>
   <% end %>
 
+
 <h4>
-  <a href="/create" class="buttons">Add Another Cat</a>
+  <a href="/create" class="buttons">Adopt Another Cat!</a>
   <a href="/logout" class="buttons">Log Out</a>
 </h4>

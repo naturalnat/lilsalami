@@ -1,28 +1,29 @@
-<h1>Add New Cat!</h1>
+<h1>~add a cat~</h1>
+<div class="create">
+  <form action="/create" method="POST">
 
-<form action="/create" method="POST">
+    <input type="text" name="name" placeholder="Name">
 
-  <label>
-    Cat Name
-  </label>
-  <input type="text" name="name">
+    <br>
+
+  <b>choose your fighter:</b>
   <br>
 
-  <input type="radio" name="image" id="image1" value="https://i.ytimg.com/vi/dGFSajKuJfrI/maxresdefault.jpg"/>
-  <label for="image1">
-    <img src="https://i.ytimg.com/vi/dGFSajKuJfrI/maxresdefault.jpg"/>
-  </label>
-  <input type="radio" name="image" id="image2" value="https://i.redd.it/25s04u40uqy11.jpg"/>
-  <label for="image2">
-    <img src="/zlata.jpg"/>
-      </label>
+
+<input type="radio" name="image[]" checked="checked" id="image1" value="https://www.washingtonpost.com/resizer/CwwBf8xuuGTo9HvG0ZmQvxmWAtY=/arc-anglerfish-washpost-prod-washpost/public/7ETAHTHWWFC4JAM7UKWU2UGCVQ.jpg"/>
+ <label for="image1">
+   <img src="https://www.washingtonpost.com/resizer/CwwBf8xuuGTo9HvG0ZmQvxmWAtY=/arc-anglerfish-washpost-prod-washpost/public/7ETAHTHWWFC4JAM7UKWU2UGCVQ.jpg"/>
+ </label>
+ <input type="radio" name="image[]" id="image2" value="https://ewscripps.brightspotcdn.com/dims4/default/8e27e13/2147483647/strip/true/crop/1920x1080+0+0/resize/1280x720!/quality/90/?url=https%3A%2F%2Fmediaassets.wtkr.com%2Ftribune-network%2Ftribwtkr-files-wordpress%2F2019%2F12%2Flil-bub.jpg"/>
+ <label for="image2">
+   <img src="https://ewscripps.brightspotcdn.com/dims4/default/8e27e13/2147483647/strip/true/crop/1920x1080+0+0/resize/1280x720!/quality/90/?url=https%3A%2F%2Fmediaassets.wtkr.com%2Ftribune-network%2Ftribwtkr-files-wordpress%2F2019%2F12%2Flil-bub.jpg"/>
+ </label>
+  <br>
+  <input type="url" name="image[]" placeholder="Custom URL" value="">
+
 
 <br>
-or enter a URL for a custom image ~
-<br>
-  <input type="text" name="image">
-  <br>
-  <br>
-  <input type="submit" value="Create">
 
+  <input type="submit" value="Create" class="buttons">
 </form>
+</div>

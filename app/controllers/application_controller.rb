@@ -17,13 +17,17 @@ class ApplicationController < Sinatra::Base
     def is_logged_in?(session)
       session.include?(:user_id)
     end
+
+    def flash_types
+      [:error, :message, :catfull]
+    end
   end
 
   get '/' do
-    if is_logged_in?(session)
-      redirect to '/cats'
-    else
+    # if is_logged_in?(session)
+    #   redirect to '/cats'
+    # else
       erb :index
-    end
+    # end
   end
 end

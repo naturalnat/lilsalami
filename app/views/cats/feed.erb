@@ -5,6 +5,9 @@
     has been fed
     <%= @cat.counter %>
     times.</h2>
+  <h2> Last fed: <%= @cat.last_update %></h2>
+
+   <%=24.hours.ago.utc%>
   <br>
   <img src="<%= @cat.image %>">
 

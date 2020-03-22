@@ -9,9 +9,9 @@ class UsersController < ApplicationController
       @user = User.new(firstname: params[:firstname], lastname: params[:lastname], username: params[:username], password: params[:password], email: params[:email])
       if @user.save
         session[:user_id] = @user.id
-        redirect to '/create'
+        redirect to '/cats'
       else
-      flash[:error] = @user.errors.full_messages.join(" ")
+      flash[:error] = @user.errors.full_messages.join(". ")
       redirect to '/signup'
       end
   end

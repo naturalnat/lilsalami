@@ -1,102 +1,114 @@
 * {
-    font-family: 'Helvetica', sans-serif;
+  font-family: 'arial';
 }
 
 body {
-    margin: 0 auto;
-    background-image: url("/images/salami.jpg");
-    background-repeat: fixed;
+  margin: 0 auto;
+  background-image: url("/images/salami.jpg");
+  background-repeat: fixed;
+  font-size: 20px;
+  color: #62968D;
+}
+
+a {
+  font-size: 15px;
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
 }
 
 
-/* box with all of the displayed data */
-.wrapper {
-   margin: 0 auto;
-   border-radius: 25px;
-   background-color: #B4DDD6;
-   padding: 40px;
-   margin: 0px 40px 40px 40px;
-   opacity:0.94;
-   color: #62968D;
+/* Input style in login, signup, add, edit, delete pages */
+input {
+ border-style: solid;
+ color: #ffffff;
+ border-color: #62968D;
+ background-color: #FFFFFF;
+ border-width: 1px;
+ border-radius: 3px;
+ padding: 5px 5px 5px;
+ font-size: 20px;
  }
 
-/* "User's Cats" */
- .allcats h1 {
-      margin: 0 auto;
-      color: #62968D;
-   }
-
-
-/* Header box on top of pages */
- .header {
-   padding: 15px;
-   margin: 0 auto;
-   background-color: ##62968D;
-   height: 60px;
-   background-image: url("/images/salamitreatmeme.jpg");
+ ::placeholder {
+   color: #CCCCCC;
+   background-color: #FFFFFF;
  }
 
-
-/* Flash error color */
- .error {
-   color:red;
- }
-
- .header .title{
-   float:left
-;
- }
+.header {
+  font-size: 20px;
+  text-align: right;
+  text-decoration: none;
+  padding: 10px 10px 40px 10px;
+  color: #fff;
+  margin: 0;
+  background-color: ##ffffff;
+  height: 60px;
+  float: left background-image: url("/images/salamitreatmeme.jpg");
+}
 
 /* Header text  */
- .header h1, h3 {
-    margin: 0 auto;
-     margin-left: 30px;
-     color: #62968D;
- }
+.header h1 h3 {
+  margin: 0 auto;
+  margin-left: 30px;
+  color: #62968D;
+}
 
-/* Header "Cats" */
- .header a {
-     color: #FFF;
-     text-decoration:none;
-     font-size: 38px;
- }
+.header a {
+  color: #ffffff;
+  font-size: 40px;
+  padding-bottom: 20px;
+  text-align: right;
+  text-decoration: none;
+}
 
-/* Input style in login, signup, add, edit, delete pages */
- input {
-border-style: solid;
-color: #2e3d34;
-border-color: #62968D;
-background-color: ##62968D;
-border-width: 1px;
-border-radius: 7px;
-padding: 7px;
-font-size: 19px;
-text-shadow: 0px 0px 0px rgba(42,42,42,.75);
+/* box with all of the displayed data */
+.wrapper {
+  margin: 0 auto;
+  border-radius: 25px;
+  border-bottom-color: rgb(58, 58, 58);
+  border: 2px;
+  background-color: #B4DDD6;
+  padding: 40px;
+  margin: 0px 40px 40px 40px;
+  opacity: 0.94
+}
+
+.wrapper img {
+  width: 150px;
+  height: 150px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
 }
 
 
 /* Button style */
 .buttons {
-	box-shadow:inset 0px 1px 0px 0px #f7c5c0;
-	background:linear-gradient(to bottom, #fc8d83 5%, #e4685d 100%);
-	background-color:#fc8d83;
-	border-radius:6px;
-	border:1px solid #d83526;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:15px;
-	font-weight:bold;
-	padding:6px 24px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #b23e35;
+  box-shadow: inset 0px 1px 0px 0px #f7c5c0;
+  background: linear-gradient(to bottom, #fc8d83 5%, #e4685d 100%);
+  background-color: #fc8d83;
+  border-radius: 6px;
+  border: 1px solid #d83526;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-size:15px;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #b23e35;
 }
+
 .buttons:hover {
-	background:linear-gradient(to bottom, #e4685d 5%, #fc8d83 100%);
-	background-color:#e4685d;
+  background: linear-gradient(to bottom, #e4685d 5%, #fc8d83 100%);
+  background-color: #e4685d;
 }
+
 .buttons:active {
-	position:relative;
-	top:1px;
+  position: relative;
+  top: 1px;
 }

@@ -1,14 +1,19 @@
 <h1>Update Cat</h1>
 
-<h2>Edits for
+<h2>
   <%= @cat.name %></h2>
+<img src="<%= @cat.image %>"
+<br>
+
 
 <form action="/cats/<%= @cat.id %>" method="POST">
   <input id="hidden" type="hidden" name="_method" value="patch">
-  <label>Edit the Cat's Name:</label>
+  <label>edit name:</label>
   <br>
   <input type="text" name="cat[name]" id="name" value="<%= @cat.name %>">
   <br>
 
-  <input type="submit" value="Update Name">
+
+
+  <input type="submit" value="Update" class="buttons">
 </form>
