@@ -5,9 +5,10 @@
     has been fed
     <%= @cat.counter %>
     times.</h2>
-  <h2> Last fed: <%= @cat.last_update %></h2>
+  <h2>
+    Last fed:
+    <%= @cat.last_update.strftime("%B %d, %Y") %></h2>
 
-   <%=24.hours.ago.utc%>
   <br>
   <img src="<%= @cat.image %>">
 
@@ -25,8 +26,24 @@
     </h1>
   <% end %>
 
+<% if @cat.counter == 10 %>
+  <script type="text/javascript">
+    function alertCounter() {
+        alert('Sorry! That  was enough treats for today!');
+        location.reload();
+      }
+  </script>
+<%else%>
+<script type="text/javascript">
+  function alertCounter() {
+      location.reload();
+    }
+</script>
+<% end %>
 
-  <a href="/cats/<%= @cat.id %>/feed" class="buttons">Giv moar treat</a>
+  <button type="button" class="buttons" onclick="alertCounter()">Giv a treat</button>
+  <!-- <a href="/cats/<%= @cat.id %>/feed" class="buttons">Giv moar treat</a> -->
+
   <a href="/cats" class="buttons">Feed another cat</a>
   <br>
   <a href="/logout" class="buttons">Logout</a>
