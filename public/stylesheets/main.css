@@ -8,6 +8,7 @@ body {
   background-repeat: fixed;
   font-size: 20px;
   color: #62968D;
+  padding: 20px 20px 20px;
 }
 
 a {
@@ -24,7 +25,7 @@ a:hover {
 /* Input style in login, signup, add, edit, delete pages */
 input {
  border-style: solid;
- color: #ffffff;
+ color: #000000;
  border-color: #62968D;
  background-color: #FFFFFF;
  border-width: 1px;
@@ -34,7 +35,7 @@ input {
  }
 
  ::placeholder {
-   color: #CCCCCC;
+   color: #000000;
    background-color: #FFFFFF;
  }
 
@@ -112,43 +113,4 @@ input {
 .buttons:active {
   position: relative;
   top: 1px;
-}
-
-.container {
-  position: relative;
-  width: 50%;
-}
-
-.image {
-  display: block;
-  height: auto;
-}
-
-.overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: .5s ease;
-  background-color: #008CBA;
-}
-
-.container:hover .overlay {
-  opacity: 1;
-}
-
-.text {
-  color: white;
-  font-size: 20px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  text-align: center;
 }

@@ -10,24 +10,17 @@ class ApplicationController < Sinatra::Base
   end
 
   helpers do
-    def current_user(session)
-      User.find(session[:user_id])
+
+    def current_user
+      @user ||= User.find(session[:user_id])
     end
 
     def is_logged_in?(session)
-      session.include?(:user_id)
-    end
-
-    def flash_types
-      [:error, :message, :catfull]
+      !!session[:user_id]
     end
   end
 
   get '/' do
-    # if is_logged_in?(session)
-    #   redirect to '/cats'
-    # else
       erb :index
-    # end
   end
 end

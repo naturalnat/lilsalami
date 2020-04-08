@@ -1,11 +1,13 @@
 Welcome,
-<%= current_user(session).username %></h1>
+<%= current_user.username %></h1>
+<%= current_user.username %></h1>
+<%= current_user.username %></h1>
+<%= current_user.username %></h1>
 <p>
 <h2>These cats want a lil treat!</h2>
 <br>
 
-    <% @cats.each do |cat| %>
-      <% if cat.user_id.to_i == @user_id %>
+    <% current_user.cats.each do |cat| %>
 
         <div class="container">
           <div class="text">
@@ -14,7 +16,6 @@ Welcome,
         <a href="/cats/<%= cat.id %>">
 
           <img src="<%= cat.image %>" class="image"></a><br><br>
-          <% end %>
         <% end %>
         </div>
 

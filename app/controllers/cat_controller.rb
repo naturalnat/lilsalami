@@ -6,9 +6,8 @@ class CatController < ApplicationController
   end
 
   post '/create' do
-    user = current_user(session)
 
-    if user.nil?
+    if current_user.nil?
       redirect to '/;'
     elsif params[:name].empty?
       flash[:error] = "Please enter all fields."
@@ -16,7 +15,7 @@ class CatController < ApplicationController
     else
       params[:image] = params[:image].reject { |c| c.empty? }
       params[:image] = params[:image][-1]
-      @cat = user.cats.create(params)
+      @cat = current_user.cats.create(params)
       flash[:message] = "Successfully created #{@cat.name}!"
       redirect to "/cats/#{@cat.id}"
    end
@@ -26,17 +25,16 @@ class CatController < ApplicationController
     if !is_logged_in?(session)
       redirect to '/'
     else
-    @user_id = current_user(session).id
-    @cats = Cat.all
     erb :'cats/all'
   end
 end
 
   get '/cats/:id' do
     if @cat = Cat.find(params[:id])
-    else redirect to '/cats'
-  end
-    erb :'cats/catid'
+      erb :'cats/catid'
+    else
+      redirect to '/cats'
+    end
   end
 
   get '/cats/:id/edit' do
@@ -47,7 +45,7 @@ end
 
   patch '/cats/:id' do
     @cat = Cat.find(params[:id])
-    if @cat.user_id.to_i == current_user(session).id
+    if @cat.user == current_user
       @cat.update(params[:cat])
       @cat.save
       flash[:message] = 'Successfully changed name!'
@@ -61,7 +59,7 @@ end
     if !is_logged_in?(session)
       redirect to '/'
     elsif @cat = Cat.find(params[:id])
-      @cat.delete if @cat.user == current_user(session)
+      @cat.delete if @cat.user == current_user
       flash[:message] = 'Cat deleted :('
       redirect to '/cats'
     end
