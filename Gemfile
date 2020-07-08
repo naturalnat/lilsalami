@@ -11,8 +11,8 @@ gem 'require_all'
 gem 'shotgun'
 gem 'sinatra'
 gem 'sinatra-activerecord', require: 'sinatra/activerecord'
-#gem 'sqlite3'
-gem 'pg', group: :production # Added postgres and made it production only.
+gem 'sqlite3'
+#gem 'pg', group: :production # Added postgres and made it production only.
 gem 'thin'
 gem 'tux'
 gem 'sinatra-flash'
